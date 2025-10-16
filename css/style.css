@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game-board {
+    width: 100%;
+    height: 100vh;
+    border-bottom: 40px solid rgb(104, 104, 104);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF); 
+    border: 1px solid black;
+    z-index: 1;
+      border-bottom: 40px solid rgb(7, 177, 21);
+
+}
+
+
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    left: 100%;
+    z-index: 5;
+}
+
+
+.pipe-animation {
+    animation: pipe-animation 1.5s linear infinite;
+}
+
+@keyframes pipe-animation {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -80px;
+    }
+}
+
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    z-index: 10;
+}
+
+.mario.jump {
+    animation: jump 650ms ease-out forwards;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40%,
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    top: 30px;
+    left: 0;
+    animation: clouds-animation 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes clouds-animation {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -550px;
+    }
+}
+
+
+.hud {
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+}
+
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #e21212;
+    color: white;
+    font-weight: bold;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #ff1a1a;
+}
+
+
+.button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+
+
+.button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+
+
+.pause-animation {
+    animation-play-state: paused !important;
+}
+
+
+#gameOverScreen {
+  display: none;
+  position: absolute;
+  bottom: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 300;
+  width: 300px;
+}
+
+#playerName {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  background-color: #e21212;
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  font-size: 10px;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+  font-size: 10px;
+}
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.6; 
+}

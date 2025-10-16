@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mario JS</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="hud">
+    <span>Pontos: <span id="score">0</span></span>
+  </div>
+
+  <div class="button-container">
+     <input type="text" id="playerName" placeholder="Digite seu nome" />
+    <button id="startBtn">Start</button>
+    <button id="restartBtn" style="display:none;">Recomeçar</button>
+  </div>
+
+ 
+
+
+  <div class="game-board">
+    <img src="./img/clouds.png" class="clouds" alt="Nuvens" />
+    <img src="./img/mario.gif" class="mario" alt="Mario" />
+    <img src="./img/pipe.png" class="pipe" alt="Pipe" />
+  </div>
+
+  
+  <div id="gameOverScreen">
+    <h1>GAME OVER</h1>
+    <p id="finalScore"></p>
+  </div>
+
+  <audio id="bgMusic" src="./song/mscinicio.mp3" preload="auto"></audio>
+  <audio id="gameOverSound" src="./song/mscgameover.mp3" preload="auto"></audio>
+
+
+
+
+</body>
+
+</html>
